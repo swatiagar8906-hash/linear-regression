@@ -1,0 +1,2 @@
+# Linear Regression from Scratch
+A mini project where I built linear regression from scratch: the cost function, gradients and gradient descent are written by hand with NumPy, without any ML library. I used pandas and seaborn to load the data, matplotlib for the plots, and scikit-learn only at the end to check my result. I made this while learning the basics of machine learning.
