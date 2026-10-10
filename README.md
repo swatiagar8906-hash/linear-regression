@@ -32,6 +32,11 @@ My values match scikit-learn up to about 7 decimal places.
 - The difference between a loop version and a vectorized version, and how broadcasting works in NumPy
 - A learning rate that is too big (0.01 here) makes the cost blow up to `nan`
 - A cost curve that goes down and becomes flat shows that training has converged
+- **Feature scaling:**
+   - Large input values (bill goes up to 50) make `w` very sensitive, so the learning rate has to stay small and `b` converges slowly
+   - Scaling with `X_scaled = (X - mean) / std` fixes this, so a bigger learning rate (0.01) works and far fewer iterations are needed
+   - After scaling, `w_s` and `b_s` have a different meaning because the unit of X changed. `b_s` is the tip at the average bill, so it came out close to the average tip (about 3.0)
+   - I converted them back with `w = w_s / std` and `b = b_s - w_s * mean / std`, and the result matched scikit-learn
 
 ## How to run
 
